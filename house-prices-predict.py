@@ -40,9 +40,6 @@ s=pd.concat([locationFrame,result2],axis=1)
 s2=pd.concat([s,m2],axis=1)
 result=pd.concat([s2,prices],axis=1)
 
-#To train & test my data
-x_train, x_test,y_train,y_test = train_test_split(s2,prices,test_size=0.33, random_state=0)
-
 #Polynomial Regression
 poly_reg = PolynomialFeatures(degree=3)
 X_poly = poly_reg.fit_transform(result)
