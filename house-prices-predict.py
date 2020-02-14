@@ -1,6 +1,4 @@
 import pandas as pd
-from sklearn.linear_model import LinearRegression
-from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import PolynomialFeatures,LabelEncoder,OneHotEncoder
 from sklearn.ensemble import GradientBoostingRegressor
 import matplotlib.pyplot as plt
@@ -43,9 +41,7 @@ result=pd.concat([s2,prices],axis=1)
 #Polynomial Regression
 poly_reg = PolynomialFeatures(degree=3)
 X_poly = poly_reg.fit_transform(result)
-lin_reg_2 = LinearRegression()
-lin_reg_2.fit(X_poly, prices)
-y_pred2 = lin_reg_2.predict(X_poly)
+
 
 #GradiendBoosting Regressor
 gbr = GradientBoostingRegressor(n_estimators=600,max_depth=5, learning_rate=0.01, min_samples_split=3)
