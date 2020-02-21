@@ -40,7 +40,7 @@ result=pd.concat([s2,prices],axis=1)
 
 #Polynomial Regression
 poly_reg = PolynomialFeatures(degree=3)
-X_poly = poly_reg.fit_transform(result)
+X_poly = poly_reg.fit_transform(s2)
 
 
 #GradiendBoosting Regressor
